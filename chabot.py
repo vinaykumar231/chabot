@@ -295,7 +295,7 @@ AVAILABLE OPTIONS:
 {experiences_context}
 
 INSTRUCTIONS:
-1. Provide 1-3 experience suggestions based on the request AND user preferences
+1. Provide 1-10 experience suggestions based on the request AND user preferences
 2. Include engaging descriptions for each experience
 3. Be warm and conversational
 4. Remember previous suggestions and avoid repetition

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,15 +73,8 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         /* Main Container */
@@ -134,7 +126,6 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -240,14 +231,10 @@
         }
 
         @keyframes typing {
-
-            0%,
-            60%,
-            100% {
+            0%, 60%, 100% {
                 transform: translateY(0);
                 opacity: 0.7;
             }
-
             30% {
                 transform: translateY(-10px);
                 opacity: 1;
@@ -447,74 +434,72 @@
             cursor: not-allowed;
         }
 
-        /* Horizontal Experience Slider */
-        /* Horizontal Experience Slider */
-        .experience-slider-container {
-            margin-top: 16px;
+        /* Horizontal Experience Cards */
+        .experience-cards-container {
+            margin-top: 20px;
             position: relative;
-            width: 100%;
-            overflow: hidden;
         }
 
-        .experience-slider-wrapper {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .experience-slider {
+        .experience-cards {
             display: flex;
-            transition: transform 0.4s ease-in-out;
-            width: 100%;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 5px 20px 5px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .slide {
-            display: flex;
-            gap: 12px;
-            width: 100%;
-            flex-shrink: 0;
-            padding: 8px 4px 16px 4px;
+        .experience-cards::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .experience-cards::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .experience-cards::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 4px;
         }
 
         .experience-card {
             background: white;
             border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 16px;
+            border-radius: 14px;
+            padding: 24px;
             transition: all 0.3s ease;
             cursor: pointer;
-            flex: 1;
-            min-width: 0;
-            max-width: calc(33.333% - 8px);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            min-width: 350px;
+            flex-shrink: 0;
         }
 
         .experience-card:hover {
             border-color: #ff6b35;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 8px;
-            gap: 8px;
+            margin-bottom: 12px;
+            gap: 12px;
         }
 
         .card-title {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 600;
             color: #1f2937;
-            line-height: 1.2;
         }
 
         .category-badge {
-            padding: 3px 8px;
+            padding: 6px 14px;
             background: #ff6b35;
             color: white;
-            border-radius: 8px;
-            font-size: 9px;
+            border-radius: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             white-space: nowrap;
@@ -522,121 +507,104 @@
 
         .card-description {
             color: #6b7280;
-            font-size: 12px;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
         }
 
         .card-meta {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            padding: 8px;
+            gap: 8px;
+            padding: 12px;
             background: #f9fafb;
-            border-radius: 6px;
-            margin-bottom: 8px;
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
         .meta-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 11px;
+            gap: 8px;
+            font-size: 14px;
             color: #374151;
         }
 
         .card-pitch {
             background: #eff6ff;
-            border-left: 2px solid #3b82f6;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 11px;
+            border-left: 3px solid #3b82f6;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
             color: #1e40af;
-            line-height: 1.3;
-            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
-        /* Slider Navigation */
-        .slider-nav {
+        /* Control Buttons */
+        .control-buttons {
             display: flex;
-            justify-content: center;
-            align-items: center;
             gap: 12px;
-            margin-top: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
         }
 
-        .slider-btn {
-            width: 32px;
-            height: 32px;
+        .control-btn {
+            padding: 10px 18px;
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 50%;
+            border: 1.5px solid #6b7280;
+            border-radius: 20px;
+            color: #6b7280;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            color: #6b7280;
-        }
-
-        .slider-btn:hover {
-            border-color: #ff6b35;
-            background: #fff7f5;
-            color: #ff6b35;
-        }
-
-        .slider-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .slider-dots {
-            display: flex;
             gap: 6px;
         }
 
-        .slider-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #d1d5db;
-            transition: all 0.2s ease;
-            cursor: pointer;
+        .control-btn:hover {
+            background: #f3f4f6;
+            transform: translateY(-1px);
         }
 
-        .slider-dot.active {
-            background: #ff6b35;
-            transform: scale(1.1);
+        .control-btn.clear {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .control-btn.clear:hover {
+            background: #fef2f2;
+        }
+
+        .control-btn.stats {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .control-btn.stats:hover {
+            background: #f0fdf4;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .messages-area {
+                padding: 20px 12px;
+            }
+
+            .message {
+                max-width: 85%;
+            }
+
+            .location-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
             .experience-card {
-                max-width: calc(50% - 6px);
+                min-width: 280px;
             }
 
-            .slide {
-                gap: 8px;
-                padding: 6px 2px 12px 2px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .experience-card {
-                max-width: 100%;
-            }
-
-            .card-title {
-                font-size: 13px;
-            }
-
-            .card-description {
-                font-size: 11px;
+            .options-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -666,15 +634,14 @@
                     <div class="welcome-message">
                         <div class="welcome-text">
                             <strong>Hey there! Welcome to BookAwestruck!</strong><br><br>
-                            I'm your experience consultant, for finding amazing hyperlocal experiences in Mumbai, Thane
-                            & Navi Mumbai.
+                            I'm your experience consultant, for finding amazing hyperlocal experiences in Mumbai, Thane & Navi Mumbai.
                             From adventure to food, wellness to creative workshops - I've got it all nearby!<br><br>
                             What brings you here today?
                         </div>
                     </div>
                     <div class="options-container">
                         <button class="option-btn" onclick="selectPurpose('romantic')">
-                    
+                            
                             <span>Plan a romantic day</span>
                         </button>
                         <button class="option-btn" onclick="selectPurpose('friends')">
@@ -686,10 +653,10 @@
                             <span>Family outing with kid-friendly Options</span>
                         </button>
                         <button class="option-btn" onclick="selectPurpose('relaxing')">
-                           
+                            
                             <span>A relaxing me-time plan</span>
                         </button>
-                        <button class="option-btn" onclick="selectPurpose('team')">
+                        <button class="option-btn" onclick="selectPurpose('Team')">
                             
                             <span>Team or office outing</span>
                         </button>
@@ -703,34 +670,34 @@
         </div>
 
         <!-- Input Area -->
-        <div class="input-area" id="inputArea">
+        <div class="input-area">
             <div class="input-wrapper">
                 <div class="input-container">
                     <textarea id="messageInput" placeholder="Ask me anything about experiences nearby..."
                         rows="1"></textarea>
                 </div>
                 <button class="send-btn" onclick="sendMessage()">
-                    ➤
+                    send
                 </button>
             </div>
             <div class="control-buttons">
                 <button class="control-btn clear" onclick="clearMemory()">
-                    🗑️ Clear Chat
+                    Clear Chat
                 </button>
                 
             </div>
         </div>
     </div>
 
-    <script>
+   <script>
         // Configuration
         const WS_URL = 'ws://localhost:8000/ws/chat/';
-
+        
         // Generate unique client ID
-        let clientId = localStorage.getItem('bookAwestruckClientId');
+        let clientId = localStorage.getItem('salesChatClientId');
         if (!clientId) {
             clientId = 'client_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('bookAwestruckClientId', clientId);
+            localStorage.setItem('salesChatClientId', clientId);
         }
 
         // State
@@ -740,8 +707,6 @@
         let sessionStartTime = Date.now();
         let selectedOptions = [];
         let selectedLocations = [];
-        let currentSlide = 0;
-        let totalSlides = 0;
 
         // Data
         const purposeOptions = [
@@ -760,13 +725,16 @@
         ];
 
         // Elements
-        const messagesArea = document.getElementById('messagesArea');
+        const messagesContainer = document.getElementById('messagesContainer');
+        const welcomeScreen = document.getElementById('welcomeScreen');
         const messageInput = document.getElementById('messageInput');
-        const inputArea = document.getElementById('inputArea');
+        const messageCountEl = document.getElementById('messageCount');
+        const sessionTimeEl = document.getElementById('sessionTime');
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             connectWebSocket();
+            startSessionTimer();
             setupInputHandlers();
         });
 
@@ -776,9 +744,8 @@
                 ws = new WebSocket(WS_URL + clientId);
 
                 ws.onopen = () => {
-                    console.log('onnected to server');
+                    console.log('✅ Connected to server');
                     isConnected = true;
-                    inputArea.classList.remove('disabled');
                 };
 
                 ws.onmessage = (event) => {
@@ -787,24 +754,15 @@
                 };
 
                 ws.onerror = (error) => {
-                    console.error(' WebSocket error:', error);
-                    inputArea.classList.add('disabled');
+                    console.error('❌ WebSocket error:', error);
                 };
 
                 ws.onclose = () => {
                     console.log('🔌 Disconnected from server');
                     isConnected = false;
-                    inputArea.classList.add('disabled');
-
-                    // Try to reconnect after 5 seconds
-                    setTimeout(() => {
-                        console.log('Attempting to reconnect...');
-                        connectWebSocket();
-                    }, 5000);
                 };
             } catch (error) {
                 console.error('Connection error:', error);
-                inputArea.classList.add('disabled');
             }
         }
 
@@ -812,89 +770,76 @@
         function handleServerMessage(data) {
             switch (data.type) {
                 case 'typing':
-                    showTypingIndicator();
+                    showThinking();
                     break;
-
+                
                 case 'response':
-                    removeTypingIndicator();
+                    removeThinking();
                     if (data.message) {
                         addAssistantMessage(data.message);
                     }
-                    if (data.experiences) {
-                        addExperienceSlider(data.experiences);
+                    if (data.experiences && data.experiences.experiences) {
+                        addExperienceCards(data.experiences.experiences);
                     }
                     break;
-
-                case 'farewell':
-                    removeTypingIndicator();
-                    addAssistantMessage(data.message);
-                    inputArea.classList.add('disabled');
-                    break;
-
-                case 'system':
-                    removeTypingIndicator();
-                    addSystemMessage(data.message);
-                    break;
-
+                
                 case 'error':
-                    removeTypingIndicator();
-                    addAssistantMessage('' + data.message);
-                    break;
-
-                case 'stats':
-                    removeTypingIndicator();
-                    showStats(data.data);
+                    removeThinking();
+                    addAssistantMessage('⚠️ ' + data.message);
                     break;
             }
         }
 
-        // Select Purpose
-        function selectPurpose(purpose) {
-            const purposeMap = {
-                'romantic': 'Plan a romantic day',
-                'friends': 'Plan something fun with friends',
-                'family': 'Family outing with kid-friendly options',
-                'relaxing': 'A relaxing me-time plan',
-                'team': 'Team or office outing',
-                'skill': 'Learn a new skill'
-            };
-
-            const purposeText = purposeMap[purpose];
-            selectedOptions = [purpose];
-
-            // Update UI
-            document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            event.currentTarget.classList.add('selected');
-
-            addUserMessage(purposeText);
-
-            // Show location selection
-            setTimeout(() => {
-                showLocationSelection();
-            }, 1000);
-        }
-
-        // Show Location Selection
-        function showLocationSelection() {
-            const locationsHtml = locations.map(loc =>
-                `<button class="location-btn" onclick="toggleLocation('${loc}')">
-                    ${loc}
+        // Start Chat
+        function startChat() {
+            hideWelcome();
+            
+            const optionsHtml = purposeOptions.map(opt => 
+                `<button class="option-btn" onclick="selectOption('${opt.id}')">
+                    <span class="option-emoji">${opt.emoji}</span>
+                    <span>${opt.label}</span>
                 </button>`
             ).join('');
 
             addAssistantMessage(
-                `Great choice!  Now select your preferred location(s) to continue (you can select multiple):`,
-                `<div class="location-grid">${locationsHtml}</div>
-                <button class="submit-btn" id="locationSubmitBtn" onclick="submitLocations()" disabled>Find Experiences</button>`
+                `Hi, welcome to BookAwestruck! I'm your experience consultant for finding amazing hyperlocal experiences in Mumbai, Thane & Navi Mumbai.<br><br>What brings you here today?`,
+                `<div class="options-container">${optionsHtml}</div>`
             );
+        }
+
+        // Select Option
+        function selectOption(optionId) {
+            const option = purposeOptions.find(o => o.id === optionId);
+            selectedOptions = [optionId];
+            
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn.textContent.includes(option.label)) {
+                    btn.classList.add('selected');
+                }
+            });
+
+            addUserMessage(option.label);
+            
+            setTimeout(() => {
+                const locationsHtml = locations.map(loc =>
+                    `<button class="location-btn" onclick="toggleLocation('${loc}')">
+                        ${loc}
+                    </button>`
+                ).join('');
+
+                addAssistantMessage(
+                    `Great 😊 now choose your Location(s) to continue (you can select multiple):`,
+                    `<div class="location-grid">${locationsHtml}</div>
+                    <button class="submit-btn" onclick="submitLocations()" disabled>Submit</button>`
+                );
+            }, 1000);
         }
 
         // Toggle Location
         function toggleLocation(location) {
             const btn = event.currentTarget;
-
+            
             if (selectedLocations.includes(location)) {
                 selectedLocations = selectedLocations.filter(l => l !== location);
                 btn.classList.remove('selected');
@@ -903,7 +848,7 @@
                 btn.classList.add('selected');
             }
 
-            const submitBtn = document.getElementById('locationSubmitBtn');
+            const submitBtn = document.querySelector('.submit-btn');
             submitBtn.disabled = selectedLocations.length === 0;
         }
 
@@ -911,185 +856,71 @@
         function submitLocations() {
             if (selectedLocations.length === 0) return;
 
-            addUserMessage(`Locations: ${selectedLocations.join(', ')}`);
+            addUserMessage(selectedLocations.join(', '));
+            
 
             // Send to WebSocket if connected
             if (isConnected && ws) {
-                const purposeMap = {
-                    'romantic': 'romantic day',
-                    'friends': 'fun with friends',
-                    'family': 'family outing',
-                    'relaxing': 'relaxing me-time',
-                    'team': 'team outing',
-                    'skill': 'learning a new skill'
-                };
-
-                const purpose = purposeMap[selectedOptions[0]];
-                const message = `I want to plan a ${purpose} in ${selectedLocations.join(', ')}`;
-
+                const purpose = purposeOptions.find(o => o.id === selectedOptions[0]);
+                const message = `I want to ${purpose.label.toLowerCase()} in ${selectedLocations.join(', ')}`;
+                
                 ws.send(JSON.stringify({
                     type: 'chat',
                     message: message,
                     client_id: clientId,
                     timestamp: new Date().toISOString()
                 }));
-            } else {
-                // Show offline message
-                addAssistantMessage("I'm currently offline. Please check your connection and try again.");
-            }
+            } 
         }
 
-        // Add Experience Slider
-        function addExperienceSlider(experienceData) {
-            if (!experienceData || !experienceData.experiences) return;
-
-            const experiences = experienceData.experiences;
-            totalSlides = Math.ceil(experiences.length / 3); // Show 3 cards per slide
-            currentSlide = 0;
-
-            // Create cards HTML for all experiences
-            const allCardsHtml = experiences.map(exp => `
-    <div class="experience-card" onclick="selectExperience('${exp.id}')">
-        <div class="card-header">
-            <div class="card-title">${exp.title}</div>
-            <div class="category-badge">${exp.category}</div>
-        </div>
-        <div class="card-description">${exp.description}</div>
-        <div class="card-meta">
-            <div class="meta-item">
-                <span>Location:</span>
-                <span>${exp.location}</span>
-            </div>
-            <div class="meta-item">
-                <span>Budget:</span>
-                <span>${exp.budget}</span>
-            </div>
-            ${exp.duration ? `
-            <div class="meta-item">
-                <span>Duration:</span>
-                <span>${exp.duration}</span>
-            </div>
-            ` : ''}
-            ${exp.best_for ? `
-            <div class="meta-item">
-                <span>Best for:</span>
-                <span>${exp.best_for}</span>
-            </div>
-            ` : ''}
-        </div>
-        ${exp.why_perfect ? `
-        <div class="card-pitch">
-            <strong>Why This is Perfect:</strong> ${exp.why_perfect}
-        </div>
-        ` : ''}
-        ${exp.highlights ? `
-        <div style="margin-top: 8px;">
-            <strong>Highlights:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-                ${exp.highlights.map(hl => `<span style="background: #f3f4f6; padding: 3px 8px; border-radius: 8px; font-size: 10px;">${hl}</span>`).join('')}
-            </div>
-        </div>
-        ` : ''}
-        ${exp.urgency_factor ? `
-        <div style="margin-top: 8px; padding: 6px 8px; background: #fef3f2; border-radius: 6px; border-left: 2px solid #ef4444; font-size: 10px;">
-            <strong>${exp.urgency_factor}</strong>
-        </div>
-        ` : ''}
-    </div>
-`).join('');
-
-            // Create slider navigation
-            const navHtml = `
-                <div class="slider-nav">
-                    <button class="slider-btn prev" onclick="prevSlide()" disabled>←</button>
-                    <div class="slider-dots" id="sliderDots">
-                        ${Array.from({ length: totalSlides }, (_, i) =>
-                `<div class="slider-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
-            ).join('')}
+        // Add Experience Cards
+        function addExperienceCards(experiences) {
+            const cardsHtml = experiences.map(exp => `
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-title">${exp.title}</div>
+                        <div class="category-badge">${exp.category}</div>
                     </div>
-                    <button class="slider-btn next" onclick="nextSlide()" ${totalSlides <= 1 ? 'disabled' : ''}>→</button>
+                    <div class="card-description">${exp.description}</div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Location: ${exp.location}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>💰</span>
+                            <span>Budget: ₹${exp.budget}</span>
+                        </div>
+                    </div>
+                    <div class="card-pitch">
+                        <strong>💡 Why This is Perfect:</strong> ${exp.why_perfect || exp.sales_pitch || 'A great choice for you!'}
+                    </div>
+                    ${exp.similarity_score ? `<div class="match-badge">
+                        <span>🎯</span>
+                        <span>Match Score: <strong>${exp.similarity_score}%</strong></span>
+                    </div>` : ''}
                 </div>
-            `;
+            `).join('');
 
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message assistant';
             messageDiv.innerHTML = `
-                <div class="message-avatar">✨</div>
+                <div class="message-avatar">a</div>
                 <div class="message-content" style="width: 100%; max-width: none;">
-                    <div>${experienceData.conversational_intro || 'Here are some great options for you!'}</div>
-                    <div class="experience-slider-container">
-                        <div class="experience-slider" id="experienceSlider" style="transform: translateX(0)">
-                            ${allCardsHtml}
-                        </div>
-                        ${navHtml}
+                    <div class="experience-cards-container">
+                        <div class="experience-cards">${cardsHtml}</div>
                     </div>
-                    <div style="margin-top: 16px;">${experienceData.conversational_closing || 'Let me know which experience interests you most!'}</div>
                 </div>
             `;
 
-            messagesArea.appendChild(messageDiv);
+            messagesContainer.appendChild(messageDiv);
             scrollToBottom();
-            updateSlider();
-        }
-
-        // Slider Navigation Functions
-        function updateSlider() {
-            const slider = document.getElementById('experienceSlider');
-            const prevBtn = document.querySelector('.slider-btn.prev');
-            const nextBtn = document.querySelector('.slider-btn.next');
-            const dots = document.querySelectorAll('.slider-dot');
-
-            if (slider) {
-                const slideWidth = 100 / totalSlides;
-                slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-
-                // Update button states
-                prevBtn.disabled = currentSlide === 0;
-                nextBtn.disabled = currentSlide === totalSlides - 1;
-
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-        }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateSlider();
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlider();
-            }
-        }
-
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateSlider();
-        }
-
-        // Select Experience
-        function selectExperience(expId) {
-            addUserMessage(`I'm interested in this experience (ID: ${expId})`);
-
-            // Send selection to backend
-            if (isConnected && ws) {
-                ws.send(JSON.stringify({
-                    type: 'chat',
-                    message: `I'm interested in experience ${expId}`,
-                    client_id: clientId,
-                    timestamp: new Date().toISOString()
-                }));
-            }
         }
 
         // Add User Message
         function addUserMessage(text) {
+            hideWelcome();
+            
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message user';
             messageDiv.innerHTML = `
@@ -1097,10 +928,11 @@
                 <div class="message-content">${text}</div>
             `;
 
-            messagesArea.appendChild(messageDiv);
+            messagesContainer.appendChild(messageDiv);
             scrollToBottom();
-
+            
             messageCount++;
+            messageCountEl.textContent = `${messageCount} message${messageCount !== 1 ? 's' : ''}`;
         }
 
         // Add Assistant Message
@@ -1108,60 +940,41 @@
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message assistant';
             messageDiv.innerHTML = `
-                <div class="message-avatar">✨</div>
+                <div class="message-avatar">a</div>
                 <div class="message-content">
                     ${text}
                     ${extraHtml ? extraHtml : ''}
                 </div>
             `;
 
-            messagesArea.appendChild(messageDiv);
+            messagesContainer.appendChild(messageDiv);
             scrollToBottom();
         }
 
-        // Add System Message
-        function addSystemMessage(text) {
+        // Show Thinking
+        function showThinking() {
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message assistant';
+            messageDiv.id = 'thinkingIndicator';
             messageDiv.innerHTML = `
-                <div class="message-avatar">⚙️</div>
-                <div class="message-content" style="background: #f0f9ff; border: 1px solid #bae6fd;">
-                    ${text}
-                </div>
-            `;
-
-            messagesArea.appendChild(messageDiv);
-            scrollToBottom();
-        }
-
-        // Show Typing Indicator
-        function showTypingIndicator() {
-            removeTypingIndicator();
-
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message assistant';
-            messageDiv.id = 'typingIndicator';
-            messageDiv.innerHTML = `
-                <div class="message-avatar">✨</div>
+                <div class="message-avatar">a</div>
                 <div class="message-content">
-                    <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
+                    <div class="thinking">
+                        <div class="thinking-dot"></div>
+                        <div class="thinking-dot"></div>
+                        <div class="thinking-dot"></div>
                     </div>
                 </div>
             `;
 
-            messagesArea.appendChild(messageDiv);
+            messagesContainer.appendChild(messageDiv);
             scrollToBottom();
         }
 
-        // Remove Typing Indicator
-        function removeTypingIndicator() {
-            const typingIndicator = document.getElementById('typingIndicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
+        // Remove Thinking
+        function removeThinking() {
+            const thinking = document.getElementById('thinkingIndicator');
+            if (thinking) thinking.remove();
         }
 
         // Send Message
@@ -1181,29 +994,38 @@
                     timestamp: new Date().toISOString()
                 }));
             } else {
-                showTypingIndicator();
+                showThinking();
                 setTimeout(() => {
-                    removeTypingIndicator();
-                    addAssistantMessage("I'm currently offline. Please check your connection and try again.");
-                }, 1500);
+                    removeThinking();
+                    addAssistantMessage("I'd be happy to help you find the perfect experience! Could you tell me more about what you're looking for?");
+                }, 1000);
             }
         }
 
-        // Clear Memory
-        function clearMemory() {
+        // Hide Welcome
+        function hideWelcome() {
+            if (welcomeScreen) {
+                welcomeScreen.style.display = 'none';
+            }
+        }
+
+        // Clear Chat
+        function clearChat() {
             if (!confirm('Are you sure you want to clear the chat history?')) {
                 return;
             }
 
-            while (messagesArea.children.length > 1) {
-                messagesArea.removeChild(messagesArea.lastChild);
+            while (messagesContainer.firstChild) {
+                messagesContainer.removeChild(messagesContainer.firstChild);
             }
 
+            messagesContainer.appendChild(welcomeScreen);
+            welcomeScreen.style.display = 'flex';
+
             messageCount = 0;
+            messageCountEl.textContent = '0 messages';
             selectedOptions = [];
             selectedLocations = [];
-            currentSlide = 0;
-            totalSlides = 0;
 
             if (isConnected && ws) {
                 ws.send(JSON.stringify({
@@ -1213,27 +1035,9 @@
             }
         }
 
-        // Get Stats
-        function getStats() {
-            if (isConnected && ws) {
-                ws.send(JSON.stringify({
-                    type: 'get_stats',
-                    client_id: clientId
-                }));
-            } else {
-                showStats({
-                    message_count: messageCount,
-                    session_duration: Math.floor((Date.now() - sessionStartTime) / 1000),
-                    client_id: clientId
-                });
-            }
-        }
-
-        // Show Stats
-        
         // Scroll to Bottom
         function scrollToBottom() {
-            messagesArea.scrollTop = messagesArea.scrollHeight;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
         // Setup Input Handlers
@@ -1253,7 +1057,16 @@
             messageInput.style.height = 'auto';
             messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + 'px';
         }
+
+        // Session Timer
+        function startSessionTimer() { 
+            setInterval(() => {
+                const elapsed = Math.floor((Date.now() - sessionStartTime) / 1000);
+                const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                const seconds = (elapsed % 60).toString().padStart(2, '0');
+                sessionTimeEl.textContent = `${minutes}:${seconds}`;
+            }, 1000);
+        }
     </script>
 </body>
-
 </html>
