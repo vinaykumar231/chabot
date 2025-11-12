@@ -61,7 +61,7 @@ ADENGAGE_CHABOT/
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Python 3.9+, FastAPI, Uvicorn
+- **Backend**: Python 3.12.2, FastAPI, Uvicorn
 - **AI Model**: Google Gemini 2.0 Flash
 - **Vector Database**: ChromaDB with Sentence Transformers
 - **Embeddings**: all-MiniLM-L6-v2 (local, no API key needed)
@@ -72,7 +72,7 @@ ADENGAGE_CHABOT/
 
 ## 📦 Prerequisites
 
-- Python 3.9 or higher
+- Python 3.12.2 
 - Google Gemini API Key ([Get it here](https://makersuite.google.com/app/apikey))
 - 2GB+ free disk space (for embeddings model)
 
@@ -83,8 +83,8 @@ ADENGAGE_CHABOT/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/vinaykumar231/RAG_chatbot.git
-cd adengage_chatbot
+git clone https://github.com/vinaykumar231/chatbot.git
+cd chatbot
 ```
 
 ### Step 2: Create Virtual Environment
